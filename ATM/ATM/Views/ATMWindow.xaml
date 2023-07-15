@@ -1,0 +1,19 @@
+﻿<Window x:Class="ATM.Views.ATMWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ATM Application" Height="300" Width="400"
+        xmlns:viewModels="clr-namespace:ATMApp.ViewModels"
+        DataContext="{Binding RelativeSource={RelativeSource Self}}">
+
+    <Grid>
+        <StackPanel Margin="20">
+            <TextBlock Text="Enter Card Number:"/>
+            <TextBox Text="{Binding CardNumber}" Margin="0 5"/>
+            <Button Content="Load" Command="{Binding LoadCommand}" Margin="0 10"/>
+            <TextBlock Text="{Binding BalanceText}" Margin="0 10"/>
+            <TextBlock Text="Transfer Amount:"/>
+            <TextBox Text="{Binding TransferAmountText}" Margin="0 5"/>
+            <Button Content="Transfer" Command="{Binding TransferCommand}"/>
+        </StackPanel>
+    </Grid>
+</Window>
